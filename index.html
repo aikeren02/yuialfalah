@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yayasan Ukhuwah Islamiyah Al Falah Cirebon - Pendidikan Islam Terpadu TKIT, SDIT, SMPIT">
+    <meta name="keywords" content="yayasan, pendidikan islam, cirebon, TKIT, SDIT, SMPIT, Al Falah">
     <title>Yayasan Ukhuwah Islamiyah Al Falah - Cirebon</title>
+    
+    <!-- Font Awesome untuk icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="LOGO%20YAYASAN.jpeg">
+    
     <style>
         /* Reset dan Base Styles */
         * {
@@ -48,7 +56,7 @@
             flex-wrap: wrap;
         }
         
-        /* Styling Logo dengan gambar asli */
+        /* Styling Logo */
         .logo-img {
             height: 75px;
             width: auto;
@@ -128,17 +136,6 @@
             position: relative;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.05"><path fill="%23ffd700" d="M32,64C32,64,16,48,16,32C16,16,32,0,48,0C64,0,80,16,80,32C80,48,64,64,64,64"/></svg>');
-            background-size: 100px 100px;
-        }
-        
         .hero h2 {
             font-size: 3.2rem;
             margin-bottom: 25px;
@@ -179,10 +176,6 @@
             background: linear-gradient(135deg, #ffaa00 0%, #ffd700 100%);
         }
         
-        .cta-button:active {
-            transform: translateY(0);
-        }
-        
         /* About Section */
         .about {
             padding: 90px 20px 80px;
@@ -192,6 +185,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         
         .section-title {
@@ -504,6 +498,168 @@
             transform: scale(1.05);
         }
         
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 20px;
+            background: #f8fafc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(13, 74, 107, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            border-radius: 50%;
+        }
+        
+        .gallery::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -50px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            border-radius: 50%;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-img {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-card:hover .gallery-img img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 74, 107, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-info h3 {
+            font-size: 1.7rem;
+            color: #0d4a6b;
+            margin-bottom: 12px;
+        }
+        
+        .gallery-info p {
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .gallery-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0d4a6b 0%, #1a6b87 100%);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: fit-content;
+            align-self: flex-start;
+        }
+        
+        .gallery-btn:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #1a6b87 0%, #0d4a6b 100%);
+            box-shadow: 0 5px 15px rgba(13, 74, 107, 0.3);
+        }
+        
+        .gallery-all {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .gallery-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #0d4a6b;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            border: 2px solid #ffd700;
+        }
+        
+        .gallery-all-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #ffaa00 0%, #ffd700 100%);
+        }
+        
         /* Contact Section */
         .contact {
             padding: 100px 20px 90px;
@@ -639,10 +795,6 @@
             background: linear-gradient(135deg, #1a6b87 0%, #0d4a6b 100%);
         }
         
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-        
         /* Footer */
         footer {
             background: linear-gradient(135deg, #0d4a6b 0%, #0a3a54 100%);
@@ -727,6 +879,76 @@
             color: #ffd700;
         }
         
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-icon {
+            font-size: 38px;
+            margin-top: 2px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float::after {
+            content: 'Hubungi Kami';
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+            background: #333;
+            color: white;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h2 {
@@ -781,7 +1003,8 @@
             
             .about-content,
             .contact-grid,
-            .vision-mission {
+            .vision-mission,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -794,19 +1017,8 @@
                 margin: 0 auto;
             }
             
-            .contact-form .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .contact-form input,
-            .contact-form textarea {
-                padding: 14px 18px;
-                font-size: 1rem;
-            }
-            
-            .submit-btn {
-                padding: 15px;
-                font-size: 1.1rem;
+            .gallery-img {
+                height: 200px;
             }
         }
         
@@ -823,52 +1035,15 @@
                 font-size: 0.85rem;
             }
             
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.05rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .unit-header h3 {
-                font-size: 1.8rem;
-            }
-            
-            .unit-header p {
-                font-size: 1.1rem;
-            }
-            
-            .unit-body ul li {
-                font-size: 1rem;
-                padding-left: 35px;
-            }
-            
-            .contact-icon {
+            .whatsapp-float {
                 width: 55px;
                 height: 55px;
-                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
             }
             
-            .contact-text h4 {
-                font-size: 1.3rem;
-            }
-            
-            .contact-text p {
-                font-size: 1.05rem;
-            }
-            
-            .footer-section h3 {
-                font-size: 1.6rem;
-            }
-            
-            .copyright {
-                font-size: 0.95rem;
-                line-height: 1.5;
+            .whatsapp-icon {
+                font-size: 30px;
             }
         }
     </style>
@@ -878,7 +1053,6 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <!-- LOGO YAYASAN DITAMBAHKAN DI SINI -->
                 <img src="LOGO%20YAYASAN.jpeg" alt="Logo Yayasan Ukhuwah Islamiyah Al Falah" class="logo-img">
                 <div class="logo-text">
                     <h1>Yayasan Ukhuwah Islamiyah Al Falah</h1>
@@ -890,6 +1064,7 @@
                     <li><a href="#home" class="active">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#units">Unit Pendidikan</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -908,7 +1083,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Tentang Kami</h2>
-                <p>Menjadi Rumah Pendidikan Islam Terpadu di Kota Cirebon Sejak 2007</p>
+                <p>Menjadi Sekolah Pendidikan Islam Terpadu di Kota Cirebon Sejak 2007</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
@@ -973,12 +1148,12 @@
                     <div class="unit-body">
                         <h4>Fasilitas & Program Unggulan</h4>
                         <ul>
-                            <li>Kurikulum Nasional + Tahfidz (1-5 juz)</li>
+                            <li>Kurikulum Merdeka + Tahfidz (1-5 juz)</li>
                             <li>Laboratorium komputer & sains modern</li>
                             <li>Perpustakaan digital berbasis islami</li>
-                            <li>Ekstrakurikuler: Tahfidz, Kaligrafi, Panahan</li>
+                            <li>Ekstrakurikuler: Tahfidz, Tahsin, Futsal, Basket, Panahan</li>
                             <li>Program bilingual (Arab-Inggris)</li>
-                            <li>Kegiatan keislaman rutin (sholat dhuha berjamaah)</li>
+                            <li>Kegiatan keislaman rutin (sholat Dhuha, Dzuhur dan Ashar berjamaah)</li>
                         </ul>
                         <div class="unit-footer">
                             <a href="#contact">Info Pendaftaran</a>
@@ -995,7 +1170,7 @@
                     <div class="unit-body">
                         <h4>Fasilitas & Program Unggulan</h4>
                         <ul>
-                            <li>Kurikulum nasional + program pesantren kilat</li>
+                            <li>Kurikulum Merdeka + program pesantren kilat</li>
                             <li>Laboratorium IPA, komputer, dan bahasa lengkap</li>
                             <li>Program tahfidz 5-15 juz dengan pembimbing khusus</li>
                             <li>Bimbingan konseling berbasis nilai islami</li>
@@ -1007,6 +1182,84 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+                <p>Dokumentasi Kegiatan Yayasan Ukhuwah Islamiyah Al Falah</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Album 1 -->
+                <div class="gallery-card">
+                    <div class="gallery-img">
+                        <img src="https://69897ca90301133a25724114.imgix.net/Salinan%20dari%20tadarus%20harian%20rutin%20(5).png" alt="Kegiatan Sekolah">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Kegiatan Sekolah</h3>
+                        <p>Foto-foto kegiatan pembelajaran dan ekstrakurikuler di TKIT, SDIT, dan SMPIT Al Falah</p>
+                        <a href="https://photos.app.goo.gl/vCYQh4eewcZ3xnud8" 
+                           target="_blank" 
+                           class="gallery-btn">
+                            Lihat Album <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Album 2 -->
+                <div class="gallery-card">
+                    <div class="gallery-img">
+                        <img src="https://69897ca90301133a25724114.imgix.net/IMG_5002.JPG" alt="Musyahadah 2025">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Musyahadah 2025</h3>
+                        <p>Momen berharga Musyahadah santri TKIT, SDIT, dan SMPIT Al Falah tahun 2025</p>
+                        <a href="https://photos.app.goo.gl/VwbJAERREHUeBGdx7" 
+                           target="_blank" 
+                           class="gallery-btn">
+                            Lihat Album <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Album 3 -->
+                <div class="gallery-card">
+                    <div class="gallery-img">
+                        <img src="https://69897ca90301133a25724114.imgix.net/sdit_alfalah_607622714.jpg" alt="Rapat Koordinasi">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Rapat Koordinasi</h3>
+                        <p>Rapat Koordinasi Yayasan Ukhuwah Islamiyah Al Falah</p>
+                        <a href="https://photos.app.goo.gl/9v6voUD7UZyfko6eA" 
+                           target="_blank" 
+                           class="gallery-btn">
+                            Lihat Album <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Lihat Semua Album -->
+            <div class="gallery-all">
+                <a href="https://photos.google.com/albums" 
+                   target="_blank" 
+                   class="gallery-all-btn">
+                    <i class="fas fa-images"></i> Lihat Semua Album
+                </a>
             </div>
         </div>
     </section>
@@ -1032,46 +1285,50 @@
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
                             <h4>Telepon & WhatsApp</h4>
-                            <p>(0231)3347648<br>088222436665(TKIT)<br>0895347130299(SDIT)<br>089669999735(SMPIT)</p>
+                            <p>(0231) 8804250<br>088222436665 (TKIT)<br>0895347130299 (SDIT)<br>089669999735 (SMPIT)</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <div class="contact-icon">✉️</div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>yuialfalahcirebon@gmail.com</p>
+                            <p>yuialafalahcirebon@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <div class="contact-icon">⏰</div>
                         <div class="contact-text">
                             <h4>Jam Operasional</h4>
-                            <p>Senin - Jumat: 07.00 - 16.00 WIB<br>Sabtu: Libur <br>Minggu: Libur</p>
+                            <p>Senin - Jumat: 07.00 - 16.00 WIB<br>Sabtu - Minggu: Libur</p>
                         </div>
                     </div>
                 </div>
-                
- <form
-  action="https://formspree.io/f/xnjbawbw"
-  method="POST"
->
-  <label>
-    Nama Email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Isi Pesan:
-    <textarea name="message">
-    </textarea>
-  </label>
-
-  <button type="submit"><div class="contact-form">
+                <div class="contact-form">
                     <h3>Kirim Pesan</h3>
-                    <form id="contactForm">
-
-                        <form</button>
-
-</form>
+                    <!-- FORMSPREE FORM - GANTI DENGAN ENDPOINT ANDA -->
+                    <form action="https://formspree.io/f/xnjbawbw" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1091,27 +1348,35 @@
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#about">Profil Yayasan</a></li>
                     <li><a href="#units">Unit Pendidikan</a></li>
+                    <li><a href="#gallery">Galeri Kegiatan</a></li>
                     <li><a href="#contact">Kontak Kami</a></li>
-                    <li><a href="#">Berita & Kegiatan</a></li>
-                    <li><a href="#">Galeri Foto</a></li>
-                    <li><a href="#">Pendaftaran Online</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScf1SoIRv9rpa8TW85VwFU7KmA0bxf5nBpeAiGcZ68eeWr7BQ/viewform"></i> Pendaftaran Online SDIT</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSduDUJpstWPnQQCFUBrDVeCzmZ2Wp5M-9s3O6kTiKX_MqxbCw/viewform?fbzx=6995384261956881484"></i> Pendaftaran Online SMPIT</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Lokasi Kami</h3>
                 <div class="footer-contact">
-                    <p><i>📍</i> JL. Pelandakan No.62 Harjamukti, Kota Cirebon, Jawa Barat 45144</p>
-                    <p><i>📱</i> (0231)3347648</p>
-                    <p><i>✉️</i> yuialfalahcirebon@gmail.com</p>
-                    <p><i>🌐</i> www.yuialfalahcirebon.verval.app</p>
+                    <p><i class="fas fa-map-marker-alt"></i> JL. Pelandakan No.62 Harjamukti, Kota Cirebon, Jawa Barat 45143</p>
+                    <p><i class="fas fa-phone"></i> (0231)8804250</p>
+                    <p><i class="fas fa-envelope"></i> yuialfalahcirebon@gmail.com</p>
+                    <p><i class="fas fa-globe"></i> https://yuialfalahcirebon.vercel.app/</p>
                 </div>
             </div>
         </div>
         <div class="copyright">
             <p>&copy; 2026 <strong>Yayasan Ukhuwah Islamiyah Al Falah</strong> Cirebon. All Rights Reserved.</p>
-            <p>Dikelola oleh Media Informasi Al Falah</p>
+            <p>Dikelola oleh Media Informasi Yayasan Ukhuwah Islamiyah Al Falah</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6285224804646?text=Assalamualaikum%20Admin%20Yayasan%20Ukhuwah%20Islamiyah%20Al%20Falah%20Cirebon%2C%0A%0ASaya%20tertarik%20untuk%20mendaftarkan%20anak%20saya%20di%20sekolah%20yang%20Bapak/Ibu%20kelola.%20%0A%0AMohon%20informasi%20lebih%20lengkap%20tentang%3A%0A1.%20Jenjang%20pendidikan%20yang%20tersedia%0A2.%20Biaya%20pendaftaran%20dan%20SPP%0A3.%20Persyaratan%20pendaftaran%0A4.%20Jadwal%20pendaftaran%0A%0ATerima%20kasih%20atas%20informasinya.%20Jazakumullah%20Khairan." 
+       class="whatsapp-float" 
+       target="_blank"
+       title="Chat via WhatsApp">
+      <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
 
     <script>
         // Smooth scrolling untuk navigation links
@@ -1135,18 +1400,6 @@
                     this.classList.add('active');
                 }
             });
-        });
-
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            
-            // Tampilkan notifikasi sukses
-            alert(`Terima kasih ${name}! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda melalui email atau telepon yang terdaftar.`);
-            
-            // Reset form
-            this.reset();
         });
 
         // Header scroll effect
